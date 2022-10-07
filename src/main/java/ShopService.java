@@ -38,4 +38,12 @@ public class ShopService {
     public Product getProductBySerialID(int serialID) {
         return productRepo.getProductBySerialID(serialID);
     }
+
+    public Order getOrder(String orderId){
+        return orderRepo.getOrder(orderId);
+    }
+
+    public String listOrders(){
+        return orderRepo.toString();
+    }
 }

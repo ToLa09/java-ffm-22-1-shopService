@@ -37,12 +37,10 @@ public class ProductRepo {
 
     public Product getProductBySerialID(int serialID) {
         for (Product entry: products.values()) {
-            if (entry.getId() == serialID) {
+            if (entry.getSerialnumber() == serialID) {
                 return entry;
             }
         }
         throw new RuntimeException("Kein Produkt mit dieser ID vorhanden");
     }
-
-
 }
