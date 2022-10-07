@@ -10,7 +10,7 @@ public class Product {
         this.price = price;
     }
 
-    public int getId() {
+    public int getSerialnumber() {
         return serialNumber;
     }
 

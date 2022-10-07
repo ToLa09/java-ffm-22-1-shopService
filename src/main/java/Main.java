@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -16,19 +19,11 @@ public class Main {
         System.out.println(myShop.listProducts());
         System.out.println(myShop.getProductBySerialID(2));
 
-
-//
-//        Map<UUID,Product> productList = new HashMap<>(Map.of(
-//                UUID.randomUUID(), product1,
-//                UUID.randomUUID(), product2,
-//                UUID.randomUUID(), product3,
-//                UUID.randomUUID(), product4
-//        ));
-//
-//        System.out.println(productList);
-//        ProductRepo productRepo = new ProductRepo(productList);
-//
-//        System.out.println(productRepo);
-
+        List<Product> tobiasProducts = new ArrayList<>(List.of(
+                product1,
+                product4
+        ));
+        myShop.orderProducts(tobiasProducts);
+        System.out.println(myShop.listOrders());
     }
 }
