@@ -1,10 +1,37 @@
 public class Product {
 
-    private int id;
-    private String name;
+    private final int serialNumber;
+    private final String name;
+    private double price;
 
-    public Product(int id, String name) {
-        this.id = id;
+    public Product(int serialNumber, String name,double price) {
+        this.serialNumber = serialNumber;
         this.name = name;
     }
+
+    public int getId() {
+        return serialNumber;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getPrice(){
+        return price;
+    }
+
+    public void setPrice(double price){
+        this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "\nProduct{" +
+                "serialNumber=" + serialNumber +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                '}';
+    }
+
 }
