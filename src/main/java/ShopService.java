@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.UUID;
 
 public class ShopService {
@@ -14,6 +15,12 @@ public class ShopService {
         productRepo.addProduct(product);
     }
 
+    public String orderProducts(List<Product> productList) {
+        Order newOrder = new Order(productList);
+        orderRepo.addOrder(newOrder);
+        return newOrder.getOrderId();
+    }
+
     public String listProducts() {
         return productRepo.toString();
     }
@@ -25,5 +32,4 @@ public class ShopService {
     public Product getProductBySerialID(int serialID) {
         return productRepo.getProductBySerialID(serialID);
     }
-
 }
