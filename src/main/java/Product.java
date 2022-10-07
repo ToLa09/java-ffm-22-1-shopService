@@ -7,6 +7,7 @@ public class Product {
     public Product(int serialNumber, String name,double price) {
         this.serialNumber = serialNumber;
         this.name = name;
+        this.price = price;
     }
 
     public int getId() {
