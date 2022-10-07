@@ -6,13 +6,19 @@ public class ShopService {
     private ProductRepo productRepo;
     private OrderRepo orderRepo;
 
+    private String generateUUID() {
+        UUID randomID = UUID.randomUUID();
+        return randomID.toString();
+    }
+
     public ShopService() {
         productRepo = new ProductRepo();
         orderRepo = new OrderRepo();
     }
 
     public void addProduct(Product product) {
-        productRepo.addProduct(product);
+        String uuid = generateUUID();
+        productRepo.addProduct(uuid, product);
     }
 
     public String orderProducts(List<Product> productList) {
@@ -25,7 +31,7 @@ public class ShopService {
         return productRepo.toString();
     }
 
-    public Product getProduct(UUID uuid){
+    public Product getProduct(String uuid){
         return productRepo.getProduct(uuid);
     }
 

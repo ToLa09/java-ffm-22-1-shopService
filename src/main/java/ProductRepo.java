@@ -11,13 +11,11 @@ public class ProductRepo {
     public ProductRepo(Map<String, Product> products) {
         this.products = products;
     }
-    public void addProduct(Product product){
-        UUID randomID = UUID.randomUUID();
-        products.put(randomID.toString(),product);
-
+    public void addProduct(String uuid, Product product){
+        products.put(uuid,product);
     }
 
-    public Product getProduct(UUID id) throws IllegalArgumentException {
+    public Product getProduct(String id) throws IllegalArgumentException {
         if (products.containsKey(id)) {
             return products.get(id);
         }
