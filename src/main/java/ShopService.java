@@ -3,9 +3,11 @@ import java.util.UUID;
 public class ShopService {
 
     private ProductRepo productRepo;
+    private OrderRepo orderRepo;
 
     public ShopService() {
         productRepo = new ProductRepo();
+        orderRepo = new OrderRepo();
     }
 
     public void addProduct(Product product) {

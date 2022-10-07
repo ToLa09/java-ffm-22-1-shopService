@@ -2,11 +2,11 @@ import java.util.List;
 import java.util.UUID;
 
 public class Order {
-    private final UUID orderId;
+    private final String orderId;
     private List<Product> products;
 
     public Order(List<Product> products) {
-        this.orderId = UUID.randomUUID();
+        this.orderId = UUID.randomUUID().toString();
         this.products = products;
     }
 
@@ -14,7 +14,7 @@ public class Order {
         return products;
     }
 
-    public UUID getOrderId() {
+    public String getOrderId() {
         return orderId;
     }
 

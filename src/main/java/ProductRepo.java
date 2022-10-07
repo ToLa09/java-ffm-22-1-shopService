@@ -3,17 +3,17 @@ import java.util.*;
 
 public class ProductRepo {
 
-    private Map<UUID,Product> products = new HashMap<>();
+    private Map<String,Product> products = new HashMap<>();
 
     public ProductRepo() {
     }
 
-    public ProductRepo(Map<UUID, Product> products) {
+    public ProductRepo(Map<String, Product> products) {
         this.products = products;
     }
     public void addProduct(Product product){
         UUID randomID = UUID.randomUUID();
-        products.put(randomID,product);
+        products.put(randomID.toString(),product);
 
     }
 
@@ -26,7 +26,7 @@ public class ProductRepo {
         }
     }
 
-    public Map<UUID,Product> listProducts() {
+    public Map<String,Product> listProducts() {
         return products;
     }
 

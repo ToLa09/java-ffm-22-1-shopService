@@ -13,7 +13,7 @@ public class OrderRepo {
         orderList.add(order);
     }
 
-    public Order getOrder(UUID orderId) {
+    public Order getOrder(String orderId) {
         for (Order o : orderList) {
             if (o.getOrderId() == orderId) {
                 return o;
