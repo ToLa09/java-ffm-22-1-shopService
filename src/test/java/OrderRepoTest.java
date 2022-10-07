@@ -27,9 +27,11 @@ class OrderRepoTest {
         Product product1 = new Product(1,"Banane",0.99);
         Product product2 = new Product(2,"Apfel", 0.39 );
         OrderRepo testOrderRepo = new OrderRepo();
-        testOrderRepo.addOrder(new Order(new ArrayList<Product>(List.of(product1,product2))));
+        Order testOrder = new Order(new ArrayList<Product>(List.of(product1,product2)));
+        testOrderRepo.addOrder(testOrder);
         //WHEN
-        
+        Order actual = testOrderRepo.getOrder(testOrder.getOrderId());
         //THEN
+        assertEquals(testOrder, actual);
     }
 }
