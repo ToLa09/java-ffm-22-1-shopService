@@ -13,6 +13,9 @@ public class OrderRepo {
         orderList.add(order);
     }
 
+    public List<Order> getAllOrders() {
+        return orderList;
+    }
 
     public Order getOrder(String orderId) {
         for (Order o : orderList) {
