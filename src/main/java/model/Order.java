@@ -1,3 +1,5 @@
+package model;
+
 import java.util.List;
 import java.util.UUID;
 
@@ -5,8 +7,8 @@ public class Order {
     private final String orderId;
     private List<Product> products;
 
-    public Order(List<Product> products) {
-        this.orderId = UUID.randomUUID().toString();
+    public Order(String uuid, List<Product> products) {
+        this.orderId = uuid;
         this.products = products;
     }
 
@@ -20,7 +22,7 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Order{" +
+        return "model.Order{" +
                 "orderId=" + orderId +
                 ", products=" + products +
                 '}';

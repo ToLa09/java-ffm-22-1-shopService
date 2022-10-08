@@ -1,4 +1,6 @@
+import model.Product;
 import org.junit.jupiter.api.Test;
+import repo.ProductRepo;
 
 import static org.junit.jupiter.api.Assertions.*;
 

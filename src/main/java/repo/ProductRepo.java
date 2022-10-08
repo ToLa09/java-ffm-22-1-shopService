@@ -1,3 +1,7 @@
+package repo;
+
+import model.Product;
+
 import java.util.*;
 
 
@@ -24,15 +28,17 @@ public class ProductRepo {
         }
     }
 
-    public Map<String,Product> listProducts() {
+    public Map<String, Product> listProducts() {
         return products;
     }
 
     @Override
     public String toString() {
-        return "ProductRepo{" +
-                "products=" + products +
-                '}';
+        String output = "Folgende Produkte sind verfügbar:\n";
+        for (Product entry: products.values()) {
+            output = output.concat(entry.toString()).concat("\n");
+        }
+        return output;
     }
 
     public Product getProductBySerialID(int serialID) {

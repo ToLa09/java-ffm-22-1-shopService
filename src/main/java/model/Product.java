@@ -1,17 +1,19 @@
+package model;
+
 public class Product {
 
-    private final int serialNumber;
+    private final int productNumber;
     private final String name;
     private double price;
 
-    public Product(int serialNumber, String name,double price) {
-        this.serialNumber = serialNumber;
+    public Product(int productNumber, String name, double price) {
+        this.productNumber = productNumber;
         this.name = name;
         this.price = price;
     }
 
     public int getSerialnumber() {
-        return serialNumber;
+        return productNumber;
     }
 
     public String getName() {
@@ -28,11 +30,11 @@ public class Product {
 
     @Override
     public String toString() {
-        return "\nProduct{" +
-                "serialNumber=" + serialNumber +
+        return "{" +
+                "productNumber=" + productNumber +
                 ", name='" + name + '\'' +
                 ", price=" + price +
-                '}';
+                "}";
     }
 
 }

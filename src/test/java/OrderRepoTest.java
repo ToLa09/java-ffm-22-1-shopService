@@ -1,9 +1,11 @@
+import model.Order;
+import model.Product;
 import org.junit.jupiter.api.Test;
+import repo.OrderRepo;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class OrderRepoTest {
@@ -12,7 +14,7 @@ class OrderRepoTest {
     void addOrder() {
         //GIVEN
         Product newProduct = new Product(1, "testprodukt", 0.99);
-        Order newOrder = new Order(List.of(newProduct));
+        Order newOrder = new Order("testID",List.of(newProduct));
         OrderRepo newOrderRepo = new OrderRepo();
         //WHEN
         newOrderRepo.addOrder(newOrder);
@@ -28,7 +30,7 @@ class OrderRepoTest {
         Product product1 = new Product(1,"Banane",0.99);
         Product product2 = new Product(2,"Apfel", 0.39 );
         OrderRepo testOrderRepo = new OrderRepo();
-        Order testOrder = new Order(new ArrayList<Product>(List.of(product1,product2)));
+        Order testOrder = new Order("testID",new ArrayList<Product>(List.of(product1,product2)));
         testOrderRepo.addOrder(testOrder);
         //WHEN
         Order actual = testOrderRepo.getOrder(testOrder.getOrderId());

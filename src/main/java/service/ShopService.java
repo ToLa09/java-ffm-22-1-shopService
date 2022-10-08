@@ -1,4 +1,12 @@
+package service;
+
+import model.Order;
+import model.Product;
+import repo.OrderRepo;
+import repo.ProductRepo;
+
 import java.util.List;
+import java.util.Scanner;
 import java.util.UUID;
 
 public class ShopService {
@@ -22,7 +30,7 @@ public class ShopService {
     }
 
     public String orderProducts(List<Product> productList) {
-        Order newOrder = new Order(productList);
+        Order newOrder = new Order(generateUUID(),productList);
         orderRepo.addOrder(newOrder);
         return newOrder.getOrderId();
     }
@@ -46,4 +54,5 @@ public class ShopService {
     public String listOrders(){
         return orderRepo.toString();
     }
+
 }

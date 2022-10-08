@@ -1,3 +1,7 @@
+import model.Product;
+import service.ShopService;
+
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,5 +29,7 @@ public class Main {
         ));
         myShop.orderProducts(tobiasProducts);
         System.out.println(myShop.listOrders());
+
+        ShopUI myShopUI = new ShopUI();
     }
 }
