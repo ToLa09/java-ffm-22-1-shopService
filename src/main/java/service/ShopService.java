@@ -6,7 +6,7 @@ import repo.OrderRepo;
 import repo.ProductRepo;
 
 import java.util.List;
-import java.util.Scanner;
+import java.util.Map;
 import java.util.UUID;
 
 public class ShopService {
@@ -37,6 +37,10 @@ public class ShopService {
 
     public String listProducts() {
         return productRepo.toString();
+    }
+
+    public Map<String, Product> getProductList(){
+        return productRepo.listProducts();
     }
 
     public Product getProduct(String uuid){

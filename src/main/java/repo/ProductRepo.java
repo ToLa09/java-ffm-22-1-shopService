@@ -35,8 +35,9 @@ public class ProductRepo {
     @Override
     public String toString() {
         String output = "Folgende Produkte sind verfügbar:\n";
-        for (Product entry: products.values()) {
-            output = output.concat(entry.toString()).concat("\n");
+        for (String key : products.keySet()) {
+            String entry = products.get(key).toString();
+            output = output.concat(entry + " Inventarnummer: " + key + "\n");
         }
         return output;
     }

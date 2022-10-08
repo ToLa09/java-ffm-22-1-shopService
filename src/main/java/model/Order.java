@@ -1,7 +1,6 @@
 package model;
 
 import java.util.List;
-import java.util.UUID;
 
 public class Order {
     private final String orderId;
@@ -22,10 +21,10 @@ public class Order {
 
     @Override
     public String toString() {
-        return "model.Order{" +
-                "orderId=" + orderId +
-                ", products=" + products +
-                '}';
+        return "{" +
+                "Bestellnummer=" + orderId +
+                ", bestellte Produkte=" + products +
+                "}\n";
     }
 }
 

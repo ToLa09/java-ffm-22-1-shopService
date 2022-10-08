@@ -22,7 +22,7 @@ public class OrderRepo {
 
     public Order getOrder(String orderId) {
         for (Order o : orderList) {
-            if (o.getOrderId() == orderId) {
+            if (o.getOrderId().equals(orderId)) {
                 return o;
             }
         }
@@ -31,7 +31,7 @@ public class OrderRepo {
 
     @Override
     public String toString() {
-        return "repo.OrderRepo{" +
+        return "{" +
                 "orderList=" + orderList +
                 '}';
     }
